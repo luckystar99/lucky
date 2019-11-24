@@ -1,0 +1,363 @@
+
+<!-- saved from url=(0038)https://www.bauer.uh.edu/parks/a1j.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+body {font-family:Comic Sans MS;}
+</style>
+<script language="javascript">
+<!--
+function fred()
+{
+//
+// There are 25 questions related to the HTML objects shown on the page
+// They are all in the form named "twocities".
+//
+// Each part of the assignment below instructs you to manipulate or examine
+// the value of the HTML elements and place an answer in one
+// of twenty-five span blocks that appear on this page.
+//
+// e.g., for span block named "ans1" you will say:
+//
+// ans1.innerHTML = "some string";
+//
+//
+// the questions 1 through 15 below use the string value from the textarea named "begins"
+// stored in a variable named "beg" like this:
+
+beg=document.twocities.begins.value;
+len_beg=beg.length; 
+//
+// *** First remove all the periods, commas and hyphens from the "beg" string before you answer questions 1 through 15
+//
+beg1to15 = beg
+while (beg1to15.indexOf(".")>-1)
+	{
+		beg1to15 = beg1to15.replace(".","");
+	}
+while (beg1to15.indexOf(",")>-1)
+	{
+		beg1to15 = beg1to15.replace(",","");
+	}
+while (beg1to15.indexOf("-")>-1)
+	{
+		beg1to15 = beg1to15.replace("-","");
+	}
+//
+//
+//
+// ***(1) how many words are the string named "beg"? (words not characters)
+// ***    show the answer in the span block  with id = "ans1"
+//
+copy = beg;
+count = 1;
+while (copy.indexOf(" ")>-1)
+{
+	copy = copy.replace(" ","");
+	count++;
+}
+ans1.innerHTML=count.toString();
+//
+// ***(2) store words in the string "beg" in an array. 
+// ***    show the first and last elements of the array in the span block with id="ans2"
+//
+   
+   begArray = beg1to15.split(" ");
+   first = begArray[0];
+   last = begArray[begArray.length-1];
+   ans2.innerHTML = first + " " + last;
+  
+//
+// ***(3) show each word in the array produced in (2) above on one line separated by commas
+// ***    in the span block  with id="ans3"
+//
+ os = "";
+ for (i = 0; i < begArray.length; i++)
+ {
+    begArray[i] = begArray[i].replace("(\n", "");
+    os += begArray[i];
+    if (i != begArray.length-1)
+    {
+    	os += ",";
+    }
+ }
+ ans3.innerHTML = os;
+//
+// ***(4) create a new string using the value of "beg" where all the characters are capitalized
+// ***    show the new string  in the span block  with id="ans4"
+//
+os = "";
+os = beg1to15.toUpperCase();
+ans4.innerHTML = os;
+//
+// ***(5)  count the number of times the letters "a", "e", "i", "o", "u" appear in the string "beg"
+// ***     show these 5 counts on one line separated by commas in the span block  with id="ans5"
+//
+a = beg1to15;
+
+a1 = a.split('a').length-1
+
+e = beg1to15;
+
+e1 = e.split('e').length-1
+
+i = beg1to15;
+
+i1 = e.split('i').length-1
+
+o = beg1to15;
+
+o1 = e.split('o').length-1
+
+u = beg1to15;
+
+u1 = e.split('u').length-1
+
+
+ans5.innerHTML = a1 + "," + e1 + "," + i1 + "," + o1 + "," + u1;
+
+//
+// ***(6)  show the location of each occurence of the character "e" in the string "beg"
+// ***     on one line separated by commas in the span block  with id="ans6"
+//
+eposition = beg
+indices = [];
+for (i=0; i<eposition.length; i++)
+{
+	if (eposition[i] === "e") indices.push(i);
+}
+
+ans6.innerHTML=indices;
+//
+// ***(7)  show the location where each word begins in the string named "beg" 
+// ***     show the answers on one line separated by commas in the span block  with id="ans7"
+//
+
+start = beg.split("");
+startx= [];
+for (i = 0; i<start.length; i++)
+{
+  if(start[i]!== " " && i == 0)
+  {
+  	startx.push(i);
+  }
+else if(start[i] !== " " && start[i-1] == " ")
+{
+	startx.push(i);
+}
+}
+
+ans7.innerHTML = startx;
+
+//
+// ***(8) place the words in the string "beg" in a table with a one pixel border,
+// ***    with a gray backgound. Use only ten cells per row. Empty cells should contain
+// ***    the word "null". Show the table in the span block with id="ans8"
+//
+ 
+
+ //
+// ***(9)  replace each occurence of the blank character in "beg" with the character "*"
+// ***     show the result in the span block  with id="ans9"
+//
+beg1to15 = beg
+
+while (beg1to15.indexOf(" ")>-1)
+{
+	beg1to15 = beg1to15.replace(" ","*");
+} 
+
+ans9.innerHTML=beg1to15;
+
+//
+// ***(10)  sort the words in array created in (2) into alphabetical order
+// ***      show the results in the span block with id="ans10" on a single line
+//
+for(i = 0; i<begArray.length;i++)
+{
+	begArray[i]=begArray[i].toLowerCase();
+}
+ans10.innerHTML = begArray.sort();
+//
+// ***(11)  show the ASCII character number of each character in the string "beg"
+// ***      separate each value with a comma and place the result on a single line in the span block
+// ***      with id="ans11"
+//
+
+//
+// ***(12)  count the number of words in the string "beg" that have 2,3,4,5 or 6 characters
+// ***      show these five counts on a single line separated by commas in the span block with id="ans12"
+//
+
+//
+// ***(13)  create a new string that contains the words in the string "beg" in reverse order
+// ***      show this new string on a single line in the span block with id="ans13"
+//
+
+//
+// ***(14)  create a new string that contains the characters in the string "beg" in all capital letters
+// ***      show this new string on a single line in the span block with id="ans14"
+//
+
+os = beg.toUpperCase();
+ans14.innerHTML = os;
+//
+// ***(15)  store the number of times the letter "a" appears in the string "beg" in 1st location;
+// ***      store the number of times the letter "b" appears in the string "beg" in 2nd location;
+// ***      store the number of times the letter "c" appears in the string "beg" in 3rd location;
+// ***      store the number of times the letter "d" appears in the string "beg" in 4th location;
+// ***      etc.
+// ***      show the 26 counts on one line separated by commas in the span block with id="ans15"
+//
+
+//
+// ***(16)  Examine the radio buttons and produce a list of the three "values" of the radios buttons separated by commas on a single line
+//         in the span block with id="ans16"
+
+//
+// ***(17)  Show the value of the radio button which is checked and its elements number separated by a comma on a line by itself
+// ***      in the span block with id="ans17"
+//
+
+//
+// *** (18) Show the elements number and value of the six checkboxes in a six-row, two-column table with a 2 pixel border
+// ***      in the span block with id="ans18"
+//
+
+//
+// ***(19)  Examine the checkboxes and produce a list of the "values" of the checkboxes that are checked. Separated the values by commas on a single line
+//
+
+//
+// ***(20)  Show the values of all the options in the select (drop down menu) named "book3chapters" in an fifteen-column one row table with a 2 pixel border border
+// ***      in the span block with id="ans20"
+//
+
+//
+// ***(21)  Show the value of the select (drop down menu) named "book3chapters" which is selected and its selectedIndex value separated by a comma on a line by itself
+// ***      in the span block with id="ans21"
+//
+
+//
+// *** Retrieve the value of the textarea named "beg" again and store it in a variable named "beg2", DO NOT REMOVE ANY CHARACTERS
+// *** You will use this string for questions 22 and 23 
+
+//
+// *** (22) Show the text phrases that are separated by commas in the string "beg2" . Each phrase should be on a line by itself.
+// ***      Place the result in the span block with id="ans22"
+//
+
+//
+// *** (23) Capitalize the first letter of each phrase from #22 bove (phrases are separated by commas) in the original string "beg2". 
+// ***      Place each phrase should be on a line by itself. 
+// ***      Place the result in the span block with id="ans23"
+//
+//
+// *** (24) Make the third radio button ("The Track of The Storm") checked.
+// ***      Make ALL six of the checkboxes be checked.
+// ***      Make the select named "book3chapters" (the drop down menu) show "Fifty-Two" as the selection
+// ***      Place the string "DONE!" in the span block with id="ans24"
+
+//
+// *** (25) Place the famous last line of the book (without quotes) in the span block with id="ans25"
+//
+final = beg;
+if (beg.indexOf(""))
+
+
+}
+-->
+</script>
+</head>
+<body>
+<center>
+<table border="2" width="100%">
+<tbody><tr><td width="120" valign="middle" align="center" bgcolor="#bbbbbb"><center><img align="top" alt="capt webb" border="2" src="./a1j_files/captsm.gif"><br><span style="font-size:8px">Capt. Horatio T.P. Webb</span></center></td>
+<td valign="middle" bgcolor="#bbbbbb" colspan="2" align="center"><center><b>ASSIGNMENT #1 Javascript<br>MIS 3371 Transaction Processing I<br>Parks -- Spring 2016</b><br><span style="font-size:10px">Version 1 -- Last Updated 9:00 AM 1/12/2016</span></center></td></tr></tbody></table></center>
+The text used in this assignment is from Charles Dicken's novel "A Tale of Two Cities" written in 1859<br>Read it at the free online book site:<br>Project Gutenberg: <a href="http://www.gutenberg.org/cache/epub/98/pg98.txt">http://www.gutenberg.org/cache/epub/98/pg98.txt</a>
+<form name="twocities">
+<p>All the HTML elements below are in a form named "twocities". View "Source" to see the 25 questions.
+</p><p>
+<table border="1" cellspacing="0" width="100%">
+<tbody><tr><td valign="top">1. The textarea below is named <b>begins</b><br>It contains the opening text of the book (form elements number 0)
+<br><textarea style="margin:6px;" name="begins" rows="10" cols="80">It was the best of times, it was the worst of times,
+it was the age of wisdom, it was the age of foolishness,
+it was the epoch of belief, it was the epoch of incredulity, 
+it was the season of Light, it was the season of Darkness, 
+it was the spring of hope, it was the winter of despair, 
+we had everything before us, we had nothing before us,
+we were all going direct to Heaven, we were all going direct the other way --
+in short, the period was so far like the present period, 
+that some of its noisiest authorities insisted on its being received, 
+for good or for evil, in the superlative degree of comparison only.</textarea></td>
+<td valign="top">2. The novel "A Tale of Two Cities" is divided into 3 books named below.<br>
+There are 3 radio buttons below are named: <b>books</b><br>(form elements 1 &#8594; 3).
+<br>Their values are: "1", "2" and "3"
+<p><input type="radio" name="books" value="1" checked=""> Recalled To Life&nbsp;
+<br><input type="radio" name="books" value="2"> The Golden Thread&nbsp;
+<br><input type="radio" name="books" value="3"> The Track of The Storm&nbsp;
+</p></td>
+</tr>
+<tr><td valign="top">3. The titles of the six chapters of the first book are shown below.
+<br>The 6 checkboxes below are named: <b>c1</b> &#8594;  <b>c6</b> (form elements 4 &#8594; 9). <br>
+Their values are the same as the text that appear to the right of each checkbox.
+<br>&nbsp;<input type="checkbox" name="c1" value="The Period">The Period
+<br>&nbsp;<input type="checkbox" name="c2" value="The Mail" checked="">The Mail
+<br>&nbsp;<input type="checkbox" name="c3" value="The Night Shadows">The Night Shadows
+<br>&nbsp;<input type="checkbox" name="c4" value="The Prepartion" checked="">The Preparation
+<br>&nbsp;<input type="checkbox" name="c5" value="The Wine Shop">The Wine-shop
+<br>&nbsp;<input type="checkbox" name="c6" value="The Shoemaker" checked="">The Shoemaker
+</td><td valign="top">4. The select (drop down menu) below is named <b>book3chapters</b>
+<br>(form elements number 10).
+<br>The fifteen options are the titles of the fifteen chapters in Book 3.
+<br>The values of the 15 options are the same as the option text shown on the select below:
+<p>
+<select name="book3chapters">
+<option value="In Secret">In Secret
+</option><option value="The Grindstone">The Grindstone
+</option><option value="The Shadow">The Shadow
+</option><option value="Calm in Storm">Calm in Storm
+</option><option value="The Wood-sawyer">The Wood-sawyer
+</option><option value="Triumph">Triumph
+</option><option value="A Knock at the Door">A Knock at the Door
+</option><option value="A Hand at Cards">A Hand at Cards
+</option><option value="The Game Made">The Game Made
+</option><option value="The Substance of the Shadow">The Substance of the Shadow
+</option><option value="Dusk">Dusk
+</option><option value="Darkness">Darkness
+</option><option value="Fifty-two">Fifty-two
+</option><option value="The Knitting Done">The Knitting Done
+</option><option value="The Footsteps Die Out For Ever">The Footsteps Die Out For Ever
+</option></select></p></td></tr></tbody></table>
+</p></form>
+<p>
+</p><ol>
+<li><span id="ans1">Contents of the span block with id="ans1"</span>
+</li><li><span id="ans2">Contents of the span block with id="ans2"</span>
+</li><li><span id="ans3">Contents of the span block with id="ans3"</span>
+</li><li><span id="ans4">Contents of the span block with id="ans4"</span>
+</li><li><span id="ans5">Contents of the span block with id="ans5"</span>
+</li><li><span id="ans6">Contents of the span block with id="ans6"</span>
+</li><li><span id="ans7">Contents of the span block with id="ans7"</span>
+</li><li><span id="ans8">Contents of the span block with id="ans8"</span>
+</li><li><span id="ans9">Contents of the span block with id="ans9"</span>
+</li><li><span id="ans10">Contents of the span block with id="ans10"</span>
+</li><li><span id="ans11">Contents of the span block with id="ans11"</span>
+</li><li><span id="ans12">Contents of the span block with id="ans12"</span>
+</li><li><span id="ans13">Contents of the span block with id="ans13"</span>
+</li><li><span id="ans14">Contents of the span block with id="ans14"</span>
+</li><li><span id="ans15">Contents of the span block with id="ans15"</span>
+</li><li><span id="ans16">Contents of the span block with id="ans16"</span>
+</li><li><span id="ans17">Contents of the span block with id="ans17"</span>
+</li><li><span id="ans18">Contents of the span block with id="ans18"</span>
+</li><li><span id="ans19">Contents of the span block with id="ans19"</span>
+</li><li><span id="ans20">Contents of the span block with id="ans20"</span>
+</li><li><span id="ans21">Contents of the span block with id="ans21"</span>
+</li><li><span id="ans22">Contents of the span block with id="ans22"</span>
+</li><li><span id="ans23">Contents of the span block with id="ans23"</span>
+</li><li><span id="ans24">Contents of the span block with id="ans24"</span>
+</li><li><span id="ans25">Contents of the span block with id="ans25"</span>
+</li></ol>
+<br><input type="button" value="this button executes the function fred()" onclick="fred()">
+
+
+</body></html>
